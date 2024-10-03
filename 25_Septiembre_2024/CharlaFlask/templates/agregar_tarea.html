@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}Agregar Tarea{% endblock %}
+
+{% block body %}
+    <div class="row mt-3">
+        <div class="col-lg-6">
+            <h3>AGREGAR TAREA</h3>
+        </div>
+        <div class="col-lg-6">
+            <a href="{{ url_for('index') }}" class="btn btn-warning float-end">Volver</a>
+        </div>
+    </div>
+    <form method="POST" action="{{ url_for('agregar_tarea') }}">
+        <div class="form-group p-2">
+            <label for="nombre">Nombre de la Tarea:</label>
+            <input type="text" name="nombre" id="nombre" class="form-control" required>
+        </div>
+        <div class="form-group p-2">
+            <label for="descripcion">Descripción:</label>
+            <textarea name="descripcion" id="descripcion" class="form-control"></textarea>
+        </div>
+        <div class="p-2">
+            <button type="submit" class="btn btn-primary">Agregar Tarea</button>
+        </div>
+    </form>
+{% endblock %}
